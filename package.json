@@ -1,0 +1,48 @@
+{
+  "name": "pkce-pair",
+  "version": "0.0.1",
+  "description": "Creates and validates PKCE-pairs for node and browser environments.",
+  "author": "Chris <chris@bumblehead.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "main": "pkce-pair.mjs",
+  "browser": "pkce-pair.mjs",
+  "exports": {
+    "node": {
+      "require": "./pkce-pair.js",
+      "import": "./pkce-pair.mjs"
+    },
+    "default": "./pkce-pair.mjs"
+  },
+  "files": [
+    "pkce-pair.js",
+    "pkce-pair.mjs",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iambumblehead/pkce-pair.git"
+  },
+  "keywords": [
+    "pkce",
+    "pkce challenge",
+    "pkce verify",
+    "oauth",
+    "oauth2",
+    "nonce",
+    "proof key"
+  ],
+  "devDependencies": {
+    "@peculiar/webcrypto": "^1.1.7",
+    "ava": "^4.0.0-alpha.2",
+    "jsdom": "18.0.0",
+    "eslint": "^8.0.1"
+  },
+  "scripts": {
+    "test": "ava pkce-pair.spec.mjs",
+    "lint": "eslint pkce-pair*mjs",
+    "tocjs": "sed -i 's/export default/module.exports =/' pkce-pair.js && sed -i 's/export //' pkce-pair.js",
+    "start": "cp pkce-pair.mjs pkce-pair.js && npm run tocjs",
+    "prepare": "npm start && npm run lint && npm test"
+  }
+}
