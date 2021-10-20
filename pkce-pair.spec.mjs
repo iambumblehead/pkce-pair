@@ -10,7 +10,7 @@ import pkcePairCreate, {
 
 const wincrypto = Object.assign(new webcrypto.Crypto(), {
   subtle : {
-    digest : (alg, arr) => alg === 'SHA-256' &&
+    digest : async (alg, arr) => alg === 'SHA-256' &&
       crypto.createHash('sha256').update(arr).digest()
   }
 });

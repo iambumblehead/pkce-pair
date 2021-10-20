@@ -35,8 +35,9 @@ const createVerifier = (crypto, len, result = '') => {
   return result;
 };
 
-const createSHA256Digest = (crypto, str) => new Uint8Array(crypto.subtle.digest(
-  'SHA-256', new Uint8Array(str.length).map((_, i) => str.charCodeAt(i))));
+const createSHA256Digest = async (crypto, str) => new Uint8Array(
+  await crypto.subtle.digest(
+    'SHA-256', new Uint8Array(str.length).map((_, i) => str.charCodeAt(i))));
 
 const createAStrFromDigest = dig => btoa(String.fromCharCode.apply(0, dig));
 
@@ -46,7 +47,7 @@ const createChallenge = async (crypto, verifier) => {
   return ( // https://tools.ietf.org/html/rfc4648#section-5
     crypto.createHash
       ? crypto.createHash('sha256').update(verifier).digest('base64')
-      : createAStrFromDigest(createSHA256Digest(crypto, verifier))
+      : createAStrFromDigest(await createSHA256Digest(crypto, verifier))
   ).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 };
 
