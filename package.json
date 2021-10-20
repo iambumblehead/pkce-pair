@@ -1,6 +1,6 @@
 {
   "name": "pkce-pair",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Creates and validates PKCE-pairs for node and browser environments.",
   "author": "Chris <chris@bumblehead.com>",
   "license": "MIT",
