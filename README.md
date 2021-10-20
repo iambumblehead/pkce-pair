@@ -4,13 +4,12 @@ pkce-pair
 
 [![npm version](https://badge.fury.io/js/pkce-pair.svg)](https://badge.fury.io/js/pkce-pair) [![Build Status](https://github.com/iambumblehead/pkce-pair/workflows/nodejs-ci/badge.svg)][2]
 
-Creates and validates [PKCE-pairs][12] for node and browser environments. `pkce-pair` copies from projects [here][10] and [here.][11] PKCE-pair brings together a few different things missing from numerous other PKCE packages published on npm,
+Creates and validates [PKCE-pairs][12] for node and browser environments. `pkce-pair` copies from projects [here][10] and [here.][11] PKCE-pair brings together a few things missing from other PKCE packages out there,
   * works with node and browser crypto,
-  * returns Promises rather than callbacks when using browser `window.crypto`
+  * returns Promises and not callbacks to use browser `window.crypto`
 
 
-If you're using PKCE pairs in a node server environment only and not a browser environment, [consider using the pkce-challenge package][11] which is a bit smaller than this one and it doesn't return async values. Async values are returned here because they are used by browser `window.crypto`.
-
+If you're using PKCE pairs in a node server environment only and not a browser environment, [consider using the pkce-challenge package.][11] Because it does not need to support browser `window.crypto` it does not need to return async values.
 
 [10]: https://github.com/coolgk/utils/
 [11]: https://github.com/crouchcd/pkce-challenge
