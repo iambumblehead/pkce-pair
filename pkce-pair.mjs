@@ -1,4 +1,3 @@
-
 const cryptoResolve = crypto => {  
   const cryptoResolved = crypto
         || (typeof window === 'object' && window.crypto);
