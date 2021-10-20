@@ -9,7 +9,7 @@ Creates and validates [PKCE-pairs][12] for node and browser environments. `pkce-
   * returns Promises rather than callbacks for using `window.crypto`
 
 
-If you're only using PKCE pairs in a node server environment only, [the pkce-challenge package][11] is a little bit smaller than this one and it doesn't need to return Promises, which are returned here because browser `window.crypto` returns them.
+If you're using PKCE pairs in a node server environment only and not a browser environment, [the pkce-challenge package][11] is a bit smaller than this one and it doesn't return async values, which are returned here because they are used by browser `window.crypto`.
 
 
 [10]: https://github.com/coolgk/utils/
