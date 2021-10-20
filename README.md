@@ -27,9 +27,9 @@ import pkcePair, {
 } from 'pkce-pair';
 ```
 
-call the imported functions with node or browser crypto object,
+call imported functions with a node or browser crypto object,
 ```javascript
-import pkcePair from 'pkce-pair'
+import pkcePair from 'pkce-pair';
 import crypto from 'crypto';
 
 const pair = await pkcePair(crypto);
@@ -38,14 +38,13 @@ const isVerified = await isVerified(crypto, pair.verifier, pair.challenge);
 console.log(isVerified); // true
 ```
 
-another example using browser crypto
+another example, using browser window.crypto
 ```javascript
-import pkcePair from 'pkce-pair'
-const crypto = window.crypto;
+import pkcePair from 'pkce-pair';
 
-const pair = await pkcePair(crypto);
-const challenge = await pkcePair.createChallenge(crypto, pair.verifier);
-const isVerified = await isVerified(crypto, pair.verifier, challenge);
+const pair = await pkcePair(window.crypto);
+const challenge = await pkcePair.createChallenge(window.crypto, pair.verifier);
+const isVerified = await isVerified(window.crypto, pair.verifier, challenge);
 
 console.log(isVerified); // true
 ```
