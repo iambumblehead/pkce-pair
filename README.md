@@ -8,8 +8,7 @@ Creates and validates [PKCE-pairs][12] for node and browser environments. `pkce-
   * works with node and browser crypto,
   * returns Promises and not callbacks to use browser `window.crypto`
 
-
-If you're using PKCE pairs in a node server environment only and not a browser environment, [consider using the pkce-challenge package.][11] Because it does not need to support browser `window.crypto` it does not need to return async values.
+If you're using PKCE pairs in a node server environment _only_ and not a browser environment, [consider using the pkce-challenge package][11] to generate synchronous pkce values instead (browser `window.crypto` is asynchronous).
 
 [10]: https://github.com/coolgk/utils/
 [11]: https://github.com/crouchcd/pkce-challenge
