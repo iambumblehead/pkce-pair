@@ -6,10 +6,10 @@ pkce-pair
 
 Creates and validates [PKCE-pairs][12] for node and browser environments. `pkce-pair` copies from projects [here][10] and [here.][11] PKCE-pair brings together a few different things missing from numerous other PKCE packages published on npm,
   * returns values from node and browser runtimes,
-  * returns a `Promises` rather than callbacks for using `window.crypto`
+  * returns `Promises` rather than callbacks for using `window.crypto`
 
 
-If you're only using PKCE pairs in a node server environment, [the pkce-challenge package][11] is a little bit smaller than this one and it doesn't need to return Promises (which are returned here because browser `window.crypto` returns them).
+If you're only using PKCE pairs in a node server environment only, [the pkce-challenge package][11] is a little bit smaller than this one and it doesn't need to return Promises, which are returned here because browser `window.crypto` returns them.
 
 
 [10]: https://github.com/coolgk/utils/
